@@ -9,5 +9,6 @@ description: Unreleased changes and upcoming features in WUD (What's Up Docker?)
 
 - 🐛 [UI] Fix container list not updating correctly via SSE events
 - 🐛 [TRIGGER] Home Assistant Install button can now run `command`/`nomad` triggers, not just `docker`/`dockercompose`, and honors each container's `wud.trigger.include`/`wud.trigger.exclude` scoping (see getwud/wud#649)
+- 🐛 [Registry] Custom registries now perform the OCI anonymous Bearer token exchange (following the registry's `WWW-Authenticate` challenge) when no static credentials are configured, fixing pulls from registries like `docker.elastic.co` that require it even for public images
 
 ---
